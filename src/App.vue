@@ -5,9 +5,15 @@ import axios from "axios";
 // import store
 import { store } from './store';
 
+// import componenti
+import AppHeader from './components/AppHeader.vue';
+import FilmContainer from './components/FilmContainer.vue'
+
 export default {
   name: 'App',
   components: {
+    AppHeader,
+    FilmContainer,
 
   },
 
@@ -22,8 +28,11 @@ export default {
 </script>
 
 <template>
+  <AppHeader />
 
-
+  <main>
+    <FilmContainer />
+  </main>
 
 </template>
 
