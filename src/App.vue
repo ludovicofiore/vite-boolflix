@@ -24,11 +24,37 @@ export default {
     }
   },
 
+  // metodo per gestione api
+  methods: {
+    getMovies() {
+      // variabile per cambio api
+      let endPoint = store.apiURL;
+
+      // condizione per ricerca
+      if (store.filmQuery !== '') {
+        endPoint += `&query=${store.filmQuery}`
+      }
+
+      axios.get(endPoint).then(res => {
+        console.log(res.data.results);
+        // riempio array con dati dell'api
+        store.filmArray = res.data.results;
+        console.log(store.filmArray);
+
+      })
+    },
+  },
+
+  // life cicle hook
+  created() {
+    this.getMovies();
+
+  }
 }
 </script>
 
 <template>
-  <AppHeader />
+  <AppHeader @search="getMovies" />
 
   <main>
     <FilmContainer />
