@@ -44,11 +44,16 @@ export default {
 
 <template>
     <div class="card">
+
+        <div class="poster-container">
+            <img :src="'https://image.tmdb.org/t/p/w342' + serieData.poster_path" :alt="serieData.title">
+        </div>
+
         <h3>{{ serieData.name }}</h3>
 
         <h5>{{ serieData.original_name }}</h5>
 
-        <div class="img-container">
+        <div class="lang-container">
             <img v-if="matchedImage" :src="matchedImage.image" :alt="matchedImage.language" />
             <p v-else>{{ serieData.original_language }}</p>
         </div>
@@ -65,7 +70,15 @@ export default {
     border: 1px solid black;
     text-align: center;
 
-    .img-container {
+    .poster-container {
+        width: 100%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .lang-container {
         width: 100%;
 
         img {

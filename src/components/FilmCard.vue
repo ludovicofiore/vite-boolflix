@@ -30,6 +30,7 @@ export default {
                     image: '../src/assets/img/Flag_of_France.svg.webp',
                 },
             ],
+
         }
     },
 
@@ -37,7 +38,8 @@ export default {
         // computed per immagine lingua
         matchedImage() {
             return this.langImg.find(imageFlag => imageFlag.language === this.movieData.original_language);
-        }
+        },
+
     },
 
 }
@@ -47,11 +49,16 @@ export default {
 
 <template>
     <div class="card">
+
+        <div class="poster-container">
+            <img :src="'https://image.tmdb.org/t/p/w342' + movieData.poster_path" :alt="movieData.title">
+        </div>
+
         <h3>{{ movieData.title }}</h3>
 
         <h5>{{ movieData.original_title }}</h5>
 
-        <div class="img-container">
+        <div class="lang-container">
             <img v-if="matchedImage" :src="matchedImage.image" :alt="matchedImage.language" />
             <p v-else>{{ movieData.original_language }}</p>
         </div>
@@ -69,7 +76,15 @@ export default {
     border: 1px solid black;
     text-align: center;
 
-    .img-container {
+    .poster-container {
+        width: 100%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .lang-container {
         width: 100%;
 
         img {
