@@ -30,6 +30,11 @@ export default {
                     image: '../src/assets/img/Flag_of_France.svg.webp',
                 },
             ],
+
+            // array per stelle voto
+            stars: [
+                1, 2, 3, 4, 5,
+            ],
         }
     },
 
@@ -63,7 +68,9 @@ export default {
             <p v-else>{{ serieData.original_language }}</p>
         </div>
 
-        <p>{{ roundVote }}</p>
+        <div class="star-vote">
+            <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
+        </div>
     </div>
 </template>
 

@@ -92,6 +92,7 @@ export default {
 </template>
 
 <style lang="scss">
+@use "@fortawesome/fontawesome-free/css/all.min.css";
 @use './style/general.scss' as *;
 @use './style/partials/variables' as*;
 </style>

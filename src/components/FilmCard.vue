@@ -31,8 +31,14 @@ export default {
                 },
             ],
 
+            // array per stelle voto
+            stars: [
+                1, 2, 3, 4, 5,
+            ],
+
         }
     },
+
 
     computed: {
         // computed per immagine lingua
@@ -46,7 +52,6 @@ export default {
         }
 
     },
-
 
 }
 
@@ -68,9 +73,11 @@ export default {
             <img v-if="matchedImage" :src="matchedImage.image" :alt="matchedImage.language" />
             <p v-else>{{ movieData.original_language }}</p>
         </div>
-        
 
-        <p>{{ roundVote }}</p>
+        <div class="star-vote">
+            <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
+        </div>
+        
     </div>
 </template>
 
@@ -96,6 +103,10 @@ export default {
         img {
             max-width: 30%;
         }
+    }
+
+    .voted {
+        background-color: yellow;
     }
 }
 </style>
