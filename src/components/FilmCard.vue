@@ -12,7 +12,6 @@ export default {
                 {
                     language: 'en',
                     image: '../src/assets/img/Flag-United-Kingdom.webp',
-                    // image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png'
                 },
                 {
                     language: 'de',
@@ -74,7 +73,7 @@ export default {
         width: 100%;
 
         img {
-            max-width: 50%;
+            max-width: 30%;
         }
     }
 }
