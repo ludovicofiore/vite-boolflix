@@ -40,7 +40,13 @@ export default {
             return this.langImg.find(imageFlag => imageFlag.language === this.movieData.original_language);
         },
 
+        // computed per arrotondare voto
+        roundVote() {
+            return Math.ceil(this.movieData.vote_average / 2);
+        }
+
     },
+
 
 }
 
@@ -64,7 +70,7 @@ export default {
         </div>
         
 
-        <p>{{ movieData.vote_average }}</p>
+        <p>{{ roundVote }}</p>
     </div>
 </template>
 

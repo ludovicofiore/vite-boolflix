@@ -37,6 +37,11 @@ export default {
         // computed per immagine lingua
         matchedImage() {
             return this.langImg.find(imageFlag => imageFlag.language === this.serieData.original_language);
+        },
+
+        // computed per arrotondare voto
+        roundVote() {
+            return Math.ceil(this.serieData.vote_average / 2);
         }
     },
 }
@@ -58,7 +63,7 @@ export default {
             <p v-else>{{ serieData.original_language }}</p>
         </div>
 
-        <p>{{ serieData.vote_average }}</p>
+        <p>{{ roundVote }}</p>
     </div>
 </template>
 
