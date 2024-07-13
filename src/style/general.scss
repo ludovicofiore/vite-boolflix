@@ -8,13 +8,49 @@
 
 body {
     font-family: "Montserrat", sans-serif;
+    background-color: rgb(84, 84, 84);
 }
 
 .container {
     width: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    h2 {
+        width: 100%;
+        margin: 50px 0;
+        color: white;
+    }
 }
 
-.fa-star {
-    color: yellow;
+
+
+.card {
+    // debug
+    width: 200px;
+    background-color: aquamarine;
+    border: 1px solid black;
+    text-align: center;
+
+    .poster-container {
+        width: 100%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .lang-container {
+        width: 100%;
+
+        img {
+            max-width: 30%;
+        }
+    }
+
+    .fa-star {
+        color: yellow;
+    }
+
 }

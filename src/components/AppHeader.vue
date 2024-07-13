@@ -15,8 +15,15 @@ export default {
 
 <template>
     <header>
-        <input type="text" placeholder="cerca un titolo" v-model="store.filmQuery">
-        <button @click="$emit('search')">Cerca</button>
+        <div class="logo-container">
+            <h1>BOOLFLIX</h1>
+        </div>
+
+        <div class="input-container">
+            <input type="text" placeholder="cerca un titolo" v-model="store.filmQuery">
+            <button @click="$emit('search')">Cerca</button>
+        </div>
+        
     </header>
 
 </template>
@@ -25,7 +32,31 @@ export default {
 header {
     background-color: black;
     height: 150px;
-    text-align: center;
-    padding: 70px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 80px;
+
+    .logo-container {
+        color: red;
+    }
+
+    .input-container {
+        input {
+            display: inline-block;
+            width: 250px;
+            padding: 10px;
+            border: 0;
+        }
+
+        button {
+            padding: 10px;
+            background-color: red;
+            border: 0;
+            color: white;
+            font-weight: bold;
+        }
+    }
+    
 }
 </style>

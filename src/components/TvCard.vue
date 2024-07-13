@@ -59,43 +59,25 @@ export default {
             <img :src="'https://image.tmdb.org/t/p/w342' + serieData.poster_path" :alt="serieData.title">
         </div>
 
-        <h3>{{ serieData.name }}</h3>
+        <div class="text-container">
+            <h3>{{ serieData.name }}</h3>
 
-        <h5>{{ serieData.original_name }}</h5>
+            <h5>{{ serieData.original_name }}</h5>
 
-        <div class="lang-container">
-            <img v-if="matchedImage" :src="matchedImage.image" :alt="matchedImage.language" />
-            <p v-else>{{ serieData.original_language }}</p>
+            <div class="lang-container">
+                <img v-if="matchedImage" :src="matchedImage.image" :alt="matchedImage.language" />
+                <p v-else>{{ serieData.original_language }}</p>
+            </div>
+
+            <div class="star-vote">
+                <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
+            </div>
+
         </div>
-
-        <div class="star-vote">
-            <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
-        </div>
+        
     </div>
 </template>
 
 <style lang="scss" scoped>
-.card {
-    // debug
-    width: 200px;
-    background-color: blueviolet;
-    border: 1px solid black;
-    text-align: center;
 
-    .poster-container {
-        width: 100%;
-
-        img {
-            max-width: 100%;
-        }
-    }
-
-    .lang-container {
-        width: 100%;
-
-        img {
-            max-width: 30%;
-        }
-    }
-}
 </style>

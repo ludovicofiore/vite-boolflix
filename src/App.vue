@@ -95,4 +95,9 @@ export default {
 @use "@fortawesome/fontawesome-free/css/all.min.css";
 @use './style/general.scss' as *;
 @use './style/partials/variables' as*;
+
+
+main {
+  padding-bottom: 80px;
+}
 </style>

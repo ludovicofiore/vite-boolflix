@@ -65,48 +65,24 @@ export default {
             <img :src="'https://image.tmdb.org/t/p/w342' + movieData.poster_path" :alt="movieData.title">
         </div>
 
-        <h3>{{ movieData.title }}</h3>
+        <div class="text-container">
+            <h3>{{ movieData.title }}</h3>
 
-        <h5>{{ movieData.original_title }}</h5>
+            <h5>{{ movieData.original_title }}</h5>
 
-        <div class="lang-container">
-            <img v-if="matchedImage" :src="matchedImage.image" :alt="matchedImage.language" />
-            <p v-else>{{ movieData.original_language }}</p>
-        </div>
+            <div class="lang-container">
+                <img v-if="matchedImage" :src="matchedImage.image" :alt="matchedImage.language" />
+                <p v-else>{{ movieData.original_language }}</p>
+            </div>
 
-        <div class="star-vote">
-            <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
+            <div class="star-vote">
+                <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
+            </div>
         </div>
         
     </div>
 </template>
 
 <style lang="scss" scoped>
-.card {
-    // debug
-    width: 200px;
-    background-color: aquamarine;
-    border: 1px solid black;
-    text-align: center;
 
-    .poster-container {
-        width: 100%;
-
-        img {
-            max-width: 100%;
-        }
-    }
-
-    .lang-container {
-        width: 100%;
-
-        img {
-            max-width: 30%;
-        }
-    }
-
-    .voted {
-        background-color: yellow;
-    }
-}
 </style>
