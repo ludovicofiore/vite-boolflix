@@ -27,30 +27,42 @@ body {
 
 
 .card {
-    // debug
-    width: 200px;
-    background-color: aquamarine;
-    border: 1px solid black;
-    text-align: center;
+    flex-basis: calc(100% / 4);
 
     .poster-container {
         width: 100%;
+        height: 456px;
 
         img {
             max-width: 100%;
         }
     }
 
-    .lang-container {
-        width: 100%;
 
-        img {
-            max-width: 30%;
+    .text-container {
+        background-color: black;
+        color: white;
+        text-align: center;
+        height: 456px;
+        overflow-y: auto;
+        padding: 20px;
+
+        * {
+            margin: 10px 0;
+        }
+
+        .lang-container {
+            width: 100%;
+
+            img {
+                max-width: 15%;
+            }
+        }
+
+        .fa-star {
+            color: yellow;
         }
     }
 
-    .fa-star {
-        color: yellow;
-    }
 
 }

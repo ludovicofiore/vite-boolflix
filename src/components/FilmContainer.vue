@@ -22,8 +22,8 @@ export default {
 
 <template>
     <!-- controllo per titolo prima di ricerca -->
-    <h2 class="default-title" :class="store.filmQuery !== '' ? 'no-display' : ''">EFFETTUA UNA RICERCA</h2>
-    <div :class="store.filmQuery === '' ? 'no-display' : ''">
+    <h2 class="default-title" :class="store.filmArray && store.tvArray == '' ? '' : 'no-display'">EFFETTUA UNA RICERCA</h2>
+    <div :class="store.filmArray && store.tvArray == '' ? 'no-display' : ''">
         
         <section class="container">
             <h2>FILM</h2>

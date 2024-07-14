@@ -78,6 +78,10 @@ export default {
             <div class="star-vote">
                 <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
             </div>
+
+            <div class="plot">
+                <p>{{ movieData.overview }}</p>
+            </div>
         </div>
         
     </div>

@@ -56,7 +56,7 @@ export default {
     <div class="card">
 
         <div class="poster-container">
-            <img :src="'https://image.tmdb.org/t/p/w342' + serieData.poster_path" :alt="serieData.title">
+            <img :src="'https://image.tmdb.org/t/p/w342' + serieData.poster_path" :alt="serieData.name">
         </div>
 
         <div class="text-container">
@@ -71,6 +71,10 @@ export default {
 
             <div class="star-vote">
                 <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
+            </div>
+
+            <div class="plot">
+                <p>{{ serieData.overview }}</p>
             </div>
 
         </div>
