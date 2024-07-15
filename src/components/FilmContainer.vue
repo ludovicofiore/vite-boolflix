@@ -15,6 +15,35 @@ export default {
     data() {
         return {
             store,
+
+            // struttura dati per immagini lingua
+            langImg: [
+                {
+                    language: 'en',
+                    image: '../src/assets/img/Flag-United-Kingdom.webp',
+                },
+                {
+                    language: 'de',
+                    image: '../src/assets/img/germanyflag__35169.jpg',
+                },
+                {
+                    language: 'it',
+                    image: '../src/assets/img/italy-flag.png',
+                },
+                {
+                    language: 'ja',
+                    image: '../src/assets/img/jp-flag.png',
+                },
+                {
+                    language: 'fr',
+                    image: '../src/assets/img/Flag_of_France.svg.webp',
+                },
+            ],
+
+            // array per stelle voto
+            stars: [
+                1, 2, 3, 4, 5,
+            ],
         }
     },
 }
@@ -27,13 +56,13 @@ export default {
         
         <section class="container">
             <h2>FILM</h2>
-            <FilmCard v-for="singleMovie in store.filmArray" :key="singleMovie.id" :movieData="singleMovie" />
+            <FilmCard v-for="singleMovie in store.filmArray" :key="singleMovie.id" :movieData="singleMovie" :langArray="langImg" :vote="stars" />
 
         </section>
 
         <section class="container">
             <h2>SERIE TV</h2>
-            <TvCard v-for="singleSerie in store.tvArray" :key="singleSerie.id" :serieData="singleSerie" />
+            <TvCard v-for="singleSerie in store.tvArray" :key="singleSerie.id" :serieData="singleSerie" :langArray="langImg" :vote="stars" />
         </section>
 
     </div>

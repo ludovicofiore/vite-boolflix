@@ -2,46 +2,16 @@
 
 export default {
     name: 'TvCard',
-    props: ['serieData'],
-
-    data() {
-        return {
-            
-            // struttura dati per immagini lingua
-            langImg: [
-                {
-                    language: 'en',
-                    image: '../src/assets/img/Flag-United-Kingdom.webp',
-                },
-                {
-                    language: 'de',
-                    image: '../src/assets/img/germanyflag__35169.jpg',
-                },
-                {
-                    language: 'it',
-                    image: '../src/assets/img/italy-flag.png',
-                },
-                {
-                    language: 'ja',
-                    image: '../src/assets/img/jp-flag.png',
-                },
-                {
-                    language: 'fr',
-                    image: '../src/assets/img/Flag_of_France.svg.webp',
-                },
-            ],
-
-            // array per stelle voto
-            stars: [
-                1, 2, 3, 4, 5,
-            ],
-        }
+    props: {
+        serieData: Object,
+        langArray: Array,
+        vote: Array
     },
 
     computed: {
         // computed per immagine lingua
         matchedImage() {
-            return this.langImg.find(imageFlag => imageFlag.language === this.serieData.original_language);
+            return this.langArray.find(imageFlag => imageFlag.language === this.serieData.original_language);
         },
 
         // computed per arrotondare voto
@@ -70,7 +40,7 @@ export default {
             </div>
 
             <div class="star-vote">
-                <i class="fa-star" v-for="(star, index) in stars" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
+                <i class="fa-star" v-for="(star, index) in this.vote" :key="index" :class="index < roundVote ? 'fa-solid' : 'fa-regular'"></i>
             </div>
 
             <div class="plot">
