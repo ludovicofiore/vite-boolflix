@@ -30,6 +30,7 @@ export default {
     handleSearch() {
       this.getMovies();
       this.getSeries();
+      store.filmQuery = '';
     },
 
 
