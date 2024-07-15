@@ -20,7 +20,7 @@ export default {
         </div>
 
         <div class="input-container">
-            <input type="text" placeholder="cerca un titolo" v-model="store.filmQuery">
+            <input type="text" placeholder="cerca un titolo" v-model="store.filmQuery" @keyup.enter="$emit('search')">
             <button @click="$emit('search')">Cerca</button>
         </div>
         
@@ -55,6 +55,7 @@ header {
             border: 0;
             color: white;
             font-weight: bold;
+            cursor: pointer;
         }
     }
     
